@@ -4,8 +4,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LocalitiesService } from './services/localities.service';
 import { ListingService } from './services/listing.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import {
+  MatButtonModule, 
+  MatIconModule, 
+  MatToolbarModule, 
+  MatFormFieldModule, 
+  MatSliderModule, 
+  MatSelectModule,
+  MatInputModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -13,6 +23,27 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatSliderModule,
+    MatSelectModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    HttpClientModule,
+    FormsModule
+  ],
+  exports: [
+    BrowserModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatSliderModule,
+    MatSelectModule,
+    BrowserAnimationsModule,
+    MatInputModule,
     HttpClientModule,
     FormsModule
   ],

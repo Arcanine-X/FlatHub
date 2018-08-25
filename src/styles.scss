@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+.example-full-width {
+    width: 100%;
+}
+
+.search { 
+    width: 100%;
+    text-align: center;
+    .button { 
+        background-color: mediumturquoise; 
+        color: limegreen;
+    }
+}
+.search * { 
+    color: black !important; 
+}
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";

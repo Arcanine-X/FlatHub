@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import {DomSanitizer} from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material';
 import { LocalitiesService } from './services/localities.service';
 import { Observable } from 'rxjs';
 import { ListingService } from './services/listing.service';
