@@ -24,7 +24,7 @@ export class DataStorageService {
     return this.flatData;
   }
 
-  getFlatInfo(distictId){
+  public getFlatInfo(distictId){
     this.clearFlatData();
     return this.listingService.getByDistrict(distictId).pipe(map(data=>{
       data['List'].forEach(element => {

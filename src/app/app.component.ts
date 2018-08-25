@@ -3,6 +3,7 @@ import { LocalitiesService } from './services/localities.service';
 import { Observable } from 'rxjs';
 import { ListingService } from './services/listing.service';
 import { map } from 'rxjs/operators';
+import { DataStorageService } from './services/data-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ export class AppComponent {
 
   constructor(
     public localitiesService: LocalitiesService,  
-    public listingService: ListingService
+    public listingService: ListingService,
+    public dataStorage: DataStorageService
   ) {
       this.uniToDis.push({
         Uni: "VUW",
@@ -44,20 +46,19 @@ export class AppComponent {
         Uni: "Waikato",
         disID :16
       });
-    this.localities = this.localitiesService.getLocalities()
-    this.listings = this.listingService.getByDistrict(this.districtId);
+    // this.localities = this.localitiesService.getLocalities()
+    // this.listings = this.listingService.getByDistrict(this.districtId);
   }
 
   public districtChanged () {
-    this.listingService.getByDistrict(this.districtId)
-    .subscribe();
+    console.log("districtChanged");
+    // this.listingService.getByDistrict(this.districtId)
+    // .subscribe();
   }
 
   public search() {
-    this.districtChanged();
-  }
-
-  public mapData() {
-    
+    this.dataStorage.getFlatInfo(this.districtId)
+    .subscribe()
+    //this.districtChanged();
   }
 }
