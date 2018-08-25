@@ -19,7 +19,7 @@ export class DataStorageService {
     this.flatData = [];
   }
 
-  getFlatData(): FlatData[]{
+  public getFlatData(): FlatData[]{
     return this.flatData;
   }
 
