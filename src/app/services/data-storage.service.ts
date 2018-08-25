@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FlatData } from './flatData';
 import { ListingService } from './listing.service';
-import 'rxjs/Rx';
-import {map} from 'rxjs/operators';
+ import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +19,7 @@ export class DataStorageService {
     this.flatData = [];
   }
 
-  getFlatData(): FlatData[]{
+  public getFlatData(): FlatData[]{
     return this.flatData;
   }
 
@@ -37,5 +36,5 @@ export class DataStorageService {
         this.flatData.push(aListing);
       });
     }));
-  }
+   }
 }
