@@ -23,17 +23,19 @@ export class DataStorageService {
     return this.flatData;
   }
 
-  public getFlatInfo(distictId){
+  public getFlatInfo(distictId, maxRent){
     this.clearFlatData();
     return this.listingService.getByDistrict(distictId).pipe(map(data=>{
       data['List'].forEach(element => {
-        var aListing = new FlatData();
-        aListing.pictureHREF = element.PictureHref;
-        aListing.rentPerWeek = element.RentPerWeek;
-        aListing.district = element.District;
-        aListing.numberOfBeds = element.Bedrooms;
-        aListing.propertyType = element. PropertyType;
-        this.flatData.push(aListing);
+        if(!element.RentPerWeek <= maxRent){
+          var aListing = new FlatData();
+          aListing.pictureHREF = element.PictureHref;
+          aListing.rentPerWeek = element.RentPerWeek;
+          aListing.district = element.District;
+          aListing.numberOfBeds = element.Bedrooms;
+          aListing.propertyType = element. PropertyType;
+          this.flatData.push(aListing);
+        }
       });
     }));
    }
