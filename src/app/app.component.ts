@@ -32,8 +32,9 @@ export class AppComponent {
   }
 
   public search() {
-    this.dataStorage.getFlatInfo(this.districtId)
+    this.dataStorage.getFlatInfo(this.districtId, this.rentPerWeek)
     .subscribe();
     console.log(this.dataStorage.getFlatData());
+    console.log(this.rentPerWeek);
   }
 }
