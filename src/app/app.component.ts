@@ -23,7 +23,6 @@ export class AppComponent {
     public localitiesService: LocalitiesService,  
     public listingService: ListingService
   ) {
-      console.log("hi");
       this.uniToDis.push({
         Uni: "VUW",
         disID :47
@@ -52,5 +51,7 @@ export class AppComponent {
     this.listings = this.listingService.getByDistrict(this.districtId);
   }
 
-
+  public search() {
+    this.districtChanged();
+  }
 }
