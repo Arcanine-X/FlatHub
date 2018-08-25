@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FlatData } from './flatData';
 import { ListingService } from './listing.service';
-import 'rxjs/Rx';
-import {map} from 'rxjs/operators';
+ import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +23,7 @@ export class DataStorageService {
     return this.flatData;
   }
 
-  getFlatInfo(distictId){
+  public getFlatInfo(distictId){
     this.clearFlatData();
     return this.listingService.getByDistrict(distictId).pipe(map(data=>{
       data['List'].forEach(element => {
@@ -37,5 +36,5 @@ export class DataStorageService {
         this.flatData.push(aListing);
       });
     }));
-  }
+   }
 }
