@@ -1,4 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    background-color: #E9b000;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+h6 {
+    color: white;
+    text-align: center;
+}
+
+.toolbar {
+    background-color: transparent;
+}
+
 .example-form {
     min-width: 150px;
     max-width: 500px;
@@ -13,12 +34,23 @@
     width: 100%;
     text-align: center;
     .button { 
-        background-color: mediumturquoise; 
+        background-color: #E24e42; 
         color: limegreen;
     }
 }
 .search * { 
     color: black !important; 
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown {
+    width: 300px;
+    margin-right: 16px;
+    border: white;
 }
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
