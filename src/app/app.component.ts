@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LocalitiesService } from './services/localities.service';
 import { Observable } from 'rxjs';
 import { ListingService } from './services/listing.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -48,10 +49,15 @@ export class AppComponent {
   }
 
   public districtChanged () {
-    this.listings = this.listingService.getByDistrict(this.districtId);
+    this.listingService.getByDistrict(this.districtId)
+    .subscribe();
   }
 
   public search() {
     this.districtChanged();
+  }
+
+  public mapData() {
+    
   }
 }
