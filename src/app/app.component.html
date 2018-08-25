@@ -56,9 +56,7 @@
   <option value="{{place.disID}}" *ngFor="let place of uniToDis">{{place.Uni}}</option>
 </select>
 
-<button (click)="search()">
-  Search
-</button>
+<form>Budget: <input [(ngModel)]="rentPerWeek" type="text" name="fname" placeholder="enter budget"></form>
 
 <pre>
   {{listings | async | json}}
@@ -80,3 +78,8 @@
   [(ngModel)]="suburb">
   <option *ngFor="let place of district.Suburbs" [ngValue]="place">{{place.Name}}</option>
 </select> -->
+<button (click)="search()">Search</button>
+
+<!-- <pre>
+  {{listings | async | json}}
+</pre> -->

@@ -4,6 +4,7 @@ import {MatIconRegistry} from '@angular/material';
 import { LocalitiesService } from './services/localities.service';
 import { Observable } from 'rxjs';
 import { ListingService } from './services/listing.service';
+import { DataStorageService } from './services/data-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -13,47 +14,30 @@ import { ListingService } from './services/listing.service';
 export class AppComponent {
   title = 'flathub';
 
-  public localities: Observable<object>;
   public listings: Observable<object>;
-
-  public region: any;  
-  public districtId: any;
-  public suburb: any;
   public uniToDis = [];
+  public districtId: any;
+  public rentPerWeek: number;
 
   constructor(
-    public localitiesService: LocalitiesService,  
-    public listingService: ListingService
+    public listingService: ListingService,
+    public dataStorage: DataStorageService
   ) {
-      this.uniToDis.push({
-        Uni: "VUW",
-        disID :47
-      });
-      this.uniToDis.push({
-        Uni: "AUT",
-        disID :7
-      });      this.uniToDis.push({
-        Uni: "Auckland Univeristy",
-        disID :7
-      });      this.uniToDis.push({
-        Uni: "Otago Uni",
-        disID :69
-      });      this.uniToDis.push({
-        Uni: "Canterbury",
-        disID :60
-      });      this.uniToDis.push({
-        Uni: "Waikato",
-        disID :16
-      });
-    this.localities = this.localitiesService.getLocalities()
-    this.listings = this.listingService.getByDistrict(this.districtId);
-  }
-
-  public districtChanged () {
+      this.uniToDis.push(
+        {Uni: "VUW", disID :47},
+        {Uni: "AUT", disID :7},
+        {Uni: "Auckland Univeristy", disID :7},
+        {Uni: "Otago Uni", disID :69},
+        {Uni: "Canterbury", disID :60},
+        {Uni: "Waikato", disID :16}
+      )
     this.listings = this.listingService.getByDistrict(this.districtId);
   }
 
   public search() {
-    this.districtChanged();
+    this.dataStorage.getFlatInfo(this.districtId, this.rentPerWeek)
+    .subscribe();
+    console.log(this.dataStorage.getFlatData());
+    console.log(this.rentPerWeek);
   }
 }
