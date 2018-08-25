@@ -7,16 +7,28 @@
 </div>
 
 <select
-  [(ngModel)]="region">
-  <option *ngFor="let place of localities | async" [ngValue]="place">{{place.Name}}</option>
+  [(ngModel)]="districtId"
+  (ngModelChange)="districtChanged()">
+  <option *ngFor="let place of uniToDis">{{place.Uni}} (click) = " "</option>
 </select>
 
-<select
+<pre>
+  {{listings | async | json}}
+</pre>
+
+<!-- <select
+  [(ngModel)]="region">
+  <option *ngFor="let place of localities | async" [ngValue]="place">{{place.Name}}</option>
+</select> -->
+
+<!-- <select
   *ngIf="region"
   [(ngModel)]="district">
   <option *ngFor="let place of region.Districts" [ngValue]="place">{{place.Name}}</option>
 </select>
 
-<select>
-  <option *ngFor="let place of localities | async" value="place">{{place.Name}}</option>
-</select>
+<select
+  *ngIf="district"
+  [(ngModel)]="suburb">
+  <option *ngFor="let place of district.Suburbs" [ngValue]="place">{{place.Name}}</option>
+</select> -->
