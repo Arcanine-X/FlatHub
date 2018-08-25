@@ -27,7 +27,7 @@ export class DataStorageService {
     this.clearFlatData();
     return this.listingService.getByDistrict(distictId).pipe(map(data=>{
       data['List'].forEach(element => {
-        if(!element.RentPerWeek <= maxRent){
+        if(element.RentPerWeek <= maxRent){
           var aListing = new FlatData();
           aListing.pictureHREF = element.PictureHref;
           aListing.rentPerWeek = element.RentPerWeek;
