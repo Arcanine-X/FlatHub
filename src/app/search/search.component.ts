@@ -9,7 +9,7 @@ import { DataStorageService } from '../services/data-storage.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit, OnDestroy {
-  title = 'flathub';
+  title = 'FlatHub';
 
   public listings: Observable<object>;
   public uniToDis = [];

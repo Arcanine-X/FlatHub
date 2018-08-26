@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import { LocalitiesService } from './services/localities.service';
@@ -11,15 +11,16 @@ import {MatGridListModule} from '@angular/material/grid-list';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  title = 'flathub';
+  title = 'FlatHub';
 
   public listings: Observable<object>;
   public uniToDis = [];
   public districtId: any;
-  public rentPerWeek: number;
+  public rentPerWeek: number | null = null;
 
   constructor(
     public listingService: ListingService,
