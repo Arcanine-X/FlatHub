@@ -16,10 +16,15 @@ import {
   MatSelectModule,
   MatInputModule
 } from '@angular/material';
+import { AppRoutingModule } from './/app-routing.module';
+import { ResultpageComponent } from './resultpage/resultpage.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ResultpageComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,8 @@ import {
     BrowserAnimationsModule,
     MatInputModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   exports: [
     BrowserModule,
