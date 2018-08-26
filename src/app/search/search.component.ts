@@ -1,27 +1,20 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
-import {MatIconRegistry} from '@angular/material';
-import { LocalitiesService } from './services/localities.service';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ListingService } from './services/listing.service';
-import { DataStorageService } from './services/data-storage.service';
-import {MatGridListModule} from '@angular/material/grid-list';
-
+import { ListingService } from '../services/listing.service';
+import { DataStorageService } from '../services/data-storage.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class AppComponent {
+export class SearchComponent implements OnInit {
   title = 'FlatHub';
 
   public listings: Observable<object>;
   public uniToDis = [];
   public districtId: any;
-  public rentPerWeek: number | null = null;
-
+  public rentPerWeek: number;
   constructor(
     public listingService: ListingService,
     public dataStorage: DataStorageService
@@ -37,10 +30,16 @@ export class AppComponent {
     this.listings = this.listingService.getByDistrict(this.districtId);
   }
 
+  ngOnInit() {
+  }
+
+
+  
   public search() {
     this.dataStorage.getFlatInfo(this.districtId, this.rentPerWeek)
     .subscribe();
     console.log(this.dataStorage.getFlatData());
     console.log(this.rentPerWeek);
   }
+
 }

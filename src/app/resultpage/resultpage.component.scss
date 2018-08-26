@@ -1,0 +1,40 @@
+mat-card{
+   margin-bottom: 30px;
+   width: 100%;
+   padding: 0px;
+   background: black;
+}
+
+mat-card-content{
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    background: white;
+    width: 100%;
+
+        font-size: 20px;
+  
+}
+
+img{
+   width: 100%;
+   max-width: 500px; 
+}
+
+.classPrice{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.location{
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.beds{
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px; 
+}
+

@@ -1,43 +1,6 @@
-<div style="text-align:center" class="header">
-    <h1>
-        {{ title }}
-      </h1>
-    <img width="300" alt="Angular Logo" src="assets/logo.png">
+<html>
+  <head>
     
-</div>
-
-<div ng-app="">
-  <div ng-controller="searchCtrl as ctrl">
-    <div class="inputs">
-      <mat-form-field class="dropdown">
-        <mat-select placeholder="Institution" [(ngModel)]="districtId">
-          <mat-option value="{{place.disID}}" *ngFor="let place of uniToDis">
-            {{place.Uni}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <div class="textfield">
-        <form class="example-form">
-          <mat-form-field class="example-full-width">
-            <input matInput type='text' [(ngModel)]="rentPerWeek" type="text" name="fname" placeholder="Rent per week" class="rentInput">
-            <!-- <mat-placeholder class="placeholder">Rent</mat-placeholder> -->
-          </mat-form-field>
-        </form>
-      </div>
-    </div>
-    <mat-toolbar class="toolbar">
-      <!-- Search bar -->
-      <div class="search">
-        <button mat-flat-button (click)="search()" class='button'>
-          Let's Go!
-        </button>
-      </div>
-    </mat-toolbar>
-  </div>
-</div>
-<div class="bottomText">
-  <h6>
-    Living within your means.
-  </h6>
-</div>
+  </head>
+  <router-outlet></router-outlet>
+</html>
