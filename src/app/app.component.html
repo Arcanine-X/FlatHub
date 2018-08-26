@@ -6,22 +6,13 @@
     
 </div>
 
-<!-- <select
-  [(ngModel)]="districtId">
-  <option value="{{place.disID}}" *ngFor="let place of uniToDis">{{place.Uni}}</option>
-</select>
-
-<button (click)="search()">
-  Search
-</button> -->
-
 <div ng-app="">
   <div ng-controller="searchCtrl as ctrl">
     <div class="inputs">
       <mat-form-field class="dropdown">
-        <mat-select placeholder="Institution">
-          <mat-option *ngFor="let uni of universities" [value]="uni.value">
-            {{uni.viewValue}}
+        <mat-select placeholder="Institution" [(ngModel)]="districtId">
+          <mat-option value="{{place.disID}}" *ngFor="let place of uniToDis">
+            {{place.Uni}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -29,7 +20,7 @@
       <div class="textfield">
         <form class="example-form">
           <mat-form-field class="example-full-width">
-            <input matInput type='text' ng-model="budget" placeholder="Rent per week">
+            <input matInput type='text' [(ngModel)]="rentPerWeek" type="text" name="fname" placeholder="Rent per week">
             <!-- <button type="button" ng-click='add(myVar)'></button> -->
           </mat-form-field>
         </form>
@@ -38,7 +29,7 @@
     <mat-toolbar class="toolbar">
       <!-- Search bar -->
       <div class="search">
-        <button mat-flat-button ng-click="ctrl.submit()" class='button'>
+        <button mat-flat-button (click)="search()" class='button'>
           Let's Go!
         </button>
       </div>
@@ -50,36 +41,3 @@
     Live within your means.
   </h6>
 </div>
-
-<select
-  [(ngModel)]="districtId">
-  <option value="{{place.disID}}" *ngFor="let place of uniToDis">{{place.Uni}}</option>
-</select>
-
-<form>Budget: <input [(ngModel)]="rentPerWeek" type="text" name="fname" placeholder="enter budget"></form>
-
-<!-- <pre>
-  {{listings | async | json}}
-</pre> -->
-
-<!-- <select
-  [(ngModel)]="region">
-  <option *ngFor="let place of localities | async" [ngValue]="place">{{place.Name}}</option>
-</select> -->
-
-<!-- <select
-  *ngIf="region"
-  [(ngModel)]="district">
-  <option *ngFor="let place of region.Districts" [ngValue]="place">{{place.Name}}</option>
-</select>
-
-<select
-  *ngIf="district"
-  [(ngModel)]="suburb">
-  <option *ngFor="let place of district.Suburbs" [ngValue]="place">{{place.Name}}</option>
-</select> -->
-<button (click)="search()">Search</button>
-
-<!-- <pre>
-  {{listings | async | json}}
-</pre> -->
