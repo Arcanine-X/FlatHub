@@ -13,7 +13,7 @@ import { DataStorageService } from './services/data-storage.service';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  title = 'flathub';
+  title = 'FlatHub';
 
   public listings: Observable<object>;
   public uniToDis = [];
@@ -37,6 +37,7 @@ export class AppComponent {
 
   public search() {
     this.dataStorage.getFlatInfo(this.districtId, this.rentPerWeek)
+    .subscribe();
     console.log(this.dataStorage.getFlatData());
     console.log(this.rentPerWeek);
   }

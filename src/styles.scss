@@ -18,6 +18,14 @@ h6 {
     text-align: center;
 }
 
+.header {
+    margin-top: 10vh;
+}
+
+.bottomText {
+    margin: 40vh;
+}
+
 .toolbar {
     background-color: transparent;
 }
@@ -61,6 +69,11 @@ h6 {
 
     .mat-form-field-label {
         padding-left: 10px;
+        color: white;
+    }
+
+    .mat-select-value {
+        color: white;
     }
 }
 
