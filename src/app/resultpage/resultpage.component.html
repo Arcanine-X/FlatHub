@@ -1,3 +1,30 @@
-<p>
-  resultpage works!
-</p>
+
+<mat-grid-list cols="2" rowHeight="2:1" *ngFor="let info of flatInfo">
+
+  <!-- <mat-grid-tile><img src = "{{info.pictureHREF}}"></mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>4</mat-grid-tile> -->
+</mat-grid-list>
+
+<mat-grid-list cols="2" rowHeight="2:1" >
+  <mat-grid-tile *ngFor="let info of flatInfo">
+        <mat-card >        
+          <img mat-card-img src = "{{info.pictureHREF}}">
+          <mat-card-content>
+            <span class = "classPrice"> ${{info.rentPerWeek}}</span> per week<br>
+            <span class = "location"> {{info.district}}</span>
+            <span class = "beds"> {{info.numberOfBeds}} bedroom</span>
+            <span class = "property"> {{info.propertyType}}</span>
+          </mat-card-content>
+        </mat-card>
+  </mat-grid-tile>
+
+  </mat-grid-list>
+
+
+    <pre>
+        {{flatInfo | json}}
+      </pre>
+
+

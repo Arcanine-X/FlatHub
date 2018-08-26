@@ -5,6 +5,8 @@ import { LocalitiesService } from './services/localities.service';
 import { Observable } from 'rxjs';
 import { ListingService } from './services/listing.service';
 import { DataStorageService } from './services/data-storage.service';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 @Component({
   selector: 'app-root',

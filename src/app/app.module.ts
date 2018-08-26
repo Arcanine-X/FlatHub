@@ -19,6 +19,9 @@ import {
 import { AppRoutingModule } from './/app-routing.module';
 import { ResultpageComponent } from './resultpage/resultpage.component';
 import { SearchComponent } from './search/search.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { SearchComponent } from './search/search.component';
     MatInputModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatGridListModule,
+    MatCardModule
   ],
   exports: [
     BrowserModule,
