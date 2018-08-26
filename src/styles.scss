@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 /* You can add global styles to this file, and also import other style files */
 html {
     background-color: #E9b000;
@@ -28,29 +30,54 @@ h6 {
   
 .example-full-width {
     width: 100%;
+    left: 5px;
 }
 
 .search { 
     width: 100%;
     text-align: center;
     .button { 
-        background-color: #E24e42; 
-        color: limegreen;
+        background-color: transparent;
+        color: #e24e42 !important;
+        border: solid 2px #e24e42 !important;
+        border-radius: 12px !important;
     }
-}
-.search * { 
-    color: black !important; 
 }
 
 .inputs {
     display: flex;
     justify-content: center;
+    align-items: baseline;
 }
 
 .dropdown {
     width: 300px;
     margin-right: 16px;
     border: white;
+
+    .mat-select-trigger {
+        padding-left: 10px !important;
+    }
+
+    .mat-form-field-label {
+        padding-left: 10px;
+    }
 }
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.dropdown .mat-form-field-infix, .rentInput {
+    border : solid 1px white;
+}
+
+.rentInput {
+    background-color: white !important;
+    padding: 8px 8px !important;
+    margin-bottom: -5px !important;
+
+    + span .mat-form-field-label {
+        top: 28px !important;
+        left: 10px !important;
+    }
+}
+
+
