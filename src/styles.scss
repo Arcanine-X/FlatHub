@@ -1,4 +1,13 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+
+$custom-typography: mat-typography-config($font-family: '"Oswald", sans-serif;');
+@include mat-core($custom-typography);
+
+$custom-primary: mat-palette($mat-blue);
+$custom-accent: mat-palette($mat-amber);
+$custom-theme: mat-light-theme($custom-primary, $custom-accent);
+@include angular-material-theme($custom-theme);
 
 /* You can add global styles to this file, and also import other style files */
 html.searchpage {
@@ -13,9 +22,10 @@ h2 {
     color: white;
 }
 
-h6 {
+h5 {
     color: white;
     text-align: center;
+    font-family: 'Arial-Regular';
 }
 
 .header {
@@ -23,11 +33,16 @@ h6 {
 }
 
 .bottomText {
-    margin: 40vh;
+    margin: 10vh;
 }
 
 .toolbar {
     background-color: transparent;
+}
+
+.headerToolbar {
+    background-color: #4e4e4e;
+    color: white;
 }
 
 .example-form {
@@ -39,6 +54,14 @@ h6 {
 .example-full-width {
     width: 100%;
     left: 5px;
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
 }
 
 .search { 

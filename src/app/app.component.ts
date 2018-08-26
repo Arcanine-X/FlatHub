@@ -27,12 +27,12 @@ export class AppComponent {
     public dataStorage: DataStorageService
   ) {
       this.uniToDis.push(
-        {Uni: "VUW", disID :47},
-        {Uni: "AUT", disID :7},
-        {Uni: "Auckland Univeristy", disID :7},
-        {Uni: "Otago Uni", disID :69},
-        {Uni: "Canterbury", disID :60},
-        {Uni: "Waikato", disID :16}
+        {Uni: "Victoria University of Wellington", disID :47},
+        {Uni: "Auckland University of Technology", disID :7},
+        {Uni: "Auckland University", disID :7},
+        {Uni: "Otago University", disID :69},
+        {Uni: "Canterbury University", disID :60},
+        {Uni: "Waikato University", disID :16}
       )
     this.listings = this.listingService.getByDistrict(this.districtId);
   }

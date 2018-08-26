@@ -1,6 +1,15 @@
 <html>
-  <head>
-    
-  </head>
+  <mat-toolbar class="headerToolbar">
+    <mat-toolbar-row>
+        <button mat-button routerLink ="search" routeLinkActive = "active" >
+            <mat-icon class="example-icon">home</mat-icon>
+            Home
+        </button>
+      
+      <span class="example-spacer"></span>
+      <mat-icon class="example-icon">account_circle</mat-icon>
+      <mat-icon class="example-icon">notifications</mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar>
   <router-outlet></router-outlet>
 </html>
