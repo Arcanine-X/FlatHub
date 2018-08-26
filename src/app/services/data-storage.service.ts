@@ -26,10 +26,11 @@ export class DataStorageService {
   public getFlatInfo(distictId, maxRent){
     this.clearFlatData();
     return this.listingService.getByDistrict(distictId).pipe(map(data=>{
+      console.log(data);
       data['List'].forEach(element => {
         if(element.RentPerWeek <= maxRent){
           var aListing = new FlatData();
-          aListing.pictureHREF = element.PictureHref;
+          aListing.pictureHREF = element.PictureHref.replace('thumb', 'plus');
           aListing.rentPerWeek = element.RentPerWeek;
           aListing.district = element.District;
           aListing.numberOfBeds = element.Bedrooms;
