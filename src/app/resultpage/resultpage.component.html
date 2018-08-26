@@ -1,6 +1,15 @@
 <div
   class="container">
-  <mat-grid-list cols="2">
+
+  <mat-grid-list cols="3">
+    <mat-grid-tile>
+      <div id ="ffs">
+          <img src = "../../assets/Artboard.jpg " >
+
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+    <mat-grid-list cols="2">
       <mat-grid-tile *ngFor="let info of flatInfo">
             <mat-card >        
               <img mat-card-image src = "{{info.pictureHREF}}">
@@ -13,6 +22,8 @@
             </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
 
 
